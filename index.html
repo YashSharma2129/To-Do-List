@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h2>To Do List</h2>
+        <h3>
+          What is a brief about to do list? To-do lists are a list of tasks that
+          an individual needs to complete or accomplish. Tasks are typically put
+          in order by priority or importance. A to-do list can be written on a
+          piece of paper or by utilizing task management software.
+        </h3>
+        <input type="text" placeholder="Write Here..." id="inputBx" />
+        <ul id="list"></ul>
+      </div>
+    </div>
+    <script>
+      let inputBx = document.querySelector("#inputBx");
+      let list = document.querySelector("#list");
+
+      inputBx.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+          addItem(this.value);
+          this.value = "";
+        }
+      });
+
+      let addItem = (inputBx) => {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = `${inputBx}<i></i>`;
+
+        listItem.addEventListener("click", function () {
+          this.classList.toggle("done");
+        });
+
+        listItem.querySelector("i").addEventListener("click", function () {
+          listItem.remove();
+        });
+        list.appendChild(listItem);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #839bb7;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  width: 450px;
+  height: 550px;
+  border-radius: 30px;
+  padding: 30px 50px;
+  background: #2f363e;
+  box-shadow: 25px 25px 75px rgba(167, 42, 42, 0.25),
+    10px 10px 70px rgba(188, 186, 70, 0.25);
+  inset: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  inset: 5px 5px 20px rgba(255, 255, 255, 0.2);
+  inset: -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  color: rgb(40, 19, 72);
+  margin-bottom: 10px;
+  font-size: 2.75em;
+}
+
+#inputBx {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 15px 20px;
+  border-radius: 30px;
+  font-size: 1em;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25) inset 2px 2px 5px
+    rgba(0, 0, 0, 0.5) inset -3px -3px -3px rgba(0, 0, 0, 0.5);
+}
+
+#list li {
+  position: relative;
+  display: flex;
+  width: calc(100% - 40px);
+  align-items: center;
+  box-shadow: 5px 5px 72px rgba(0, 0, 0, 0.25) inset 2px 2px 5px
+    rgba(0, 0, 0, 0.5) inset -3px -3px -3px rgba(0, 0, 0, 0.5);
+  background-color: rgb(64, 123, 148);
+  margin: 15px 0;
+  justify-content: space-between;
+  padding: 10px 10px 10px 45px;
+  min-height: 45px;
+  cursor: pointer;
+  border-radius: 22.5px;
+  color: azure;
+}
+
+#list li i {
+  position: absolute;
+  width: 30px;
+  right: -40px;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25) inset 2px 2px 5px
+    rgba(255, 255, 255, 0.5) inset -3px -3px -3px rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  height: 30px;
+  background: rgb(198, 48, 48);
+}
+
+#list li i::before {
+  content: " ";
+  position: absolute;
+  width: 15px;
+  transform: rotate(45deg);
+  height: 2px;
+  background: white;
+}
+
+#list li i::after {
+  content: " ";
+  position: absolute;
+  width: 15px;
+  transform: rotate(-45deg);
+  height: 2px;
+  background: white;
+}
+
+#list li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+#list li.done {
+  background: rgb(76, 49, 129);
+}
+
+#list li.done::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  left: 10px;
+  height: 6px;
+  border-bottom: 2px solid pink;
+  border-left: 2px solid pink;
+  transform: rotate(315deg);
+}
+
+#list {
+  position: relative;
+  margin-top: 20px;
+  height: 350px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scrollbar styles */
+#list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#list::-webkit-scrollbar {
+  width: 5px;
+}
+
+#list::-webkit-scrollbar-thumb {
+  background: #fff;
+}
